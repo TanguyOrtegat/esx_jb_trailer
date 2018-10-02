@@ -26,6 +26,7 @@ local CurrentlyTowedVehicle4   = nil
 local CurrentlyTowedVehicle5   = nil
 local CurrentlyTowedVehicle6   = nil
 local CurrentlyTowedVehicle7   = nil
+local CurrentlyTowedVehicle8   = nil
 local GotTrailer = 0
 local TrailerHandle = 0
 local oldtrailer = 0
@@ -55,6 +56,7 @@ Citizen.CreateThread(function()
 					local dist = GetDistanceBetweenCoords(myCoord.x, myCoord.y, myCoord.z, coords.x, coords.y, coords.z, true)
 					if dist < 5 then
 						DrawMarker(1, coords.x, coords.y, coords.z, 0, 0, 0, 0, 0, 0, 1.0, 1.0, 1.0, 255, 0, 0, 200, 0, 0, 0, 0)
+						DrawMarker(1, coords2.x, coords2.y, coords2.z, 0, 0, 0, 0, 0, 0, 1.0, 1.0, 1.0, 255, 0, 0, 200, 0, 0, 0, 0)
 						-- FreezeEntityPosition
 						if dist < 1 then
 							SetTextComponentFormat("STRING")
@@ -77,6 +79,7 @@ Citizen.CreateThread(function()
 					local dist = GetDistanceBetweenCoords(myCoord.x, myCoord.y, myCoord.z, coords.x, coords.y, coords.z, true)
 					if dist < 5 then
 						DrawMarker(1, coords.x, coords.y, coords.z, 0, 0, 0, 0, 0, 0, 1.0, 1.0, 1.0, 255, 0, 0, 200, 0, 0, 0, 0)
+						DrawMarker(1, coords2.x, coords2.y, coords2.z, 0, 0, 0, 0, 0, 0, 1.0, 1.0, 1.0, 255, 0, 0, 200, 0, 0, 0, 0)
 						if dist < 1 then
 							SetTextComponentFormat("STRING")
 							if CurrentlyTowedVehicle7 == nil then
@@ -99,7 +102,81 @@ Citizen.CreateThread(function()
 						end
 					end
 				end
-			end
+			end	
+		elseif oldtrailermodel == 524108981 then -- boat trailer
+			if currentVehicle == 0 then -- a pied
+				if oldtrailer ~= 0 then
+					local coords = GetOffsetFromEntityInWorldCoords(oldtrailer, -2.0, -3.0, 0)
+					local coords2 = GetOffsetFromEntityInWorldCoords(oldtrailer, 0.0, -6.0, -1.0)
+					local dist = GetDistanceBetweenCoords(myCoord.x, myCoord.y, myCoord.z, coords.x, coords.y, coords.z, true)
+					if dist < 5 then
+						DrawMarker(1, coords.x, coords.y, coords.z, 0, 0, 0, 0, 0, 0, 1.0, 1.0, 1.0, 255, 0, 0, 200, 0, 0, 0, 0)
+						DrawMarker(1, coords2.x, coords2.y, coords2.z, 0, 0, 0, 0, 0, 0, 1.0, 1.0, 1.0, 255, 0, 0, 200, 0, 0, 0, 0)
+						if dist < 1 then
+							SetTextComponentFormat("STRING")
+							if CurrentlyTowedVehicle8 == nil then
+								AddTextComponentString("Appuyez ~INPUT_CONTEXT~ pour attacher véhicule")
+							else
+								AddTextComponentString("Appuyez ~INPUT_CONTEXT~ pour détacher véhicule")
+							end
+							DisplayHelpTextFromStringLabel(0, 0, 1, -1)
+							if IsControlJustPressed(1, Keys["E"]) then
+								local clostestvehicle = GetClosestVehicle(coords2.x, coords2.y, coords2.z, 2.0, 0, 12294)
+								local modelhash = GetEntityModel(clostestvehicle)
+								local isboat = false
+								if IsThisModelABoat(modelhash) then
+									isboat = true
+								else
+									isboat = false
+								end
+								if CurrentlyTowedVehicle8 == nil and isboat then
+									if modelhash == -282946103 then--suntrap
+										AttachEntityToEntity(clostestvehicle, oldtrailer, 20, 0.0, -0.6, 0.3, 0.0, 0.0, 0.0, false, false, false, false, 20, true)
+									elseif modelhash == 290013743 then--tropic
+										AttachEntityToEntity(clostestvehicle, oldtrailer, 20, 0.0, -0.9, 0.7, 0.0, 0.0, 0.0, false, false, false, false, 20, true)									
+									elseif modelhash == 1448677353 then--tropic2
+										AttachEntityToEntity(clostestvehicle, oldtrailer, 20, 0.0, -0.9, 0.7, 0.0, 0.0, 0.0, false, false, false, false, 20, true)									
+									elseif modelhash == 1070967343 then --toro
+										AttachEntityToEntity(clostestvehicle, oldtrailer, 20, 0.0, -1.3, 0.7, 0.0, 0.0, 0.0, false, false, false, false, 20, true)									
+									elseif modelhash == 908897389 then --toro2
+										AttachEntityToEntity(clostestvehicle, oldtrailer, 20, 0.0, -1.3, 0.7, 0.0, 0.0, 0.0, false, false, false, false, 20, true)
+									elseif modelhash == 231083307 then --speeder
+										AttachEntityToEntity(clostestvehicle, oldtrailer, 20, 0.0, -2.1, 0.4, 0.0, 0.0, 0.0, false, false, false, false, 20, true)									
+									elseif modelhash == 437538602 then --speeder2
+										AttachEntityToEntity(clostestvehicle, oldtrailer, 20, 0.0, -2.1, 0.4, 0.0, 0.0, 0.0, false, false, false, false, 20, true)									
+									elseif modelhash == 400514754 then --squalo
+										AttachEntityToEntity(clostestvehicle, oldtrailer, 20, 0.0, -1.2, 0.8, 0.0, 0.0, 0.0, false, false, false, false, 20, true)									
+									elseif modelhash == 861409633 then --jetmax
+										AttachEntityToEntity(clostestvehicle, oldtrailer, 20, 0.0, -2.0, 0.6, 0.0, 0.0, 0.0, false, false, false, false, 20, true)									
+									elseif modelhash == 1033245328 then --Dinghy
+										AttachEntityToEntity(clostestvehicle, oldtrailer, 20, 0.0, -1.1, 0.3, 0.0, 0.0, 0.0, false, false, false, false, 20, true)									
+									elseif modelhash == 276773164 then --Dinghy2
+										AttachEntityToEntity(clostestvehicle, oldtrailer, 20, 0.0, -1.1, 0.3, 0.0, 0.0, 0.0, false, false, false, false, 20, true)									
+									elseif modelhash == 509498602 then --Dinghy3
+										AttachEntityToEntity(clostestvehicle, oldtrailer, 20, 0.0, -1.1, 0.3, 0.0, 0.0, 0.0, false, false, false, false, 20, true)									
+									elseif modelhash == 867467158 then --Dinghy4
+										AttachEntityToEntity(clostestvehicle, oldtrailer, 20, 0.0, -1.1, 0.3, 0.0, 0.0, 0.0, false, false, false, false, 20, true)									
+									elseif modelhash == -1030275036 then --Seashark
+										AttachEntityToEntity(clostestvehicle, oldtrailer, 20, 0.0, -1.1, 0.0, 0.0, 0.0, 0.0, false, false, false, false, 20, true)									
+									elseif modelhash == -616331036 then --Seashark2
+										AttachEntityToEntity(clostestvehicle, oldtrailer, 20, 0.0, -1.1, 0.0, 0.0, 0.0, 0.0, false, false, false, false, 20, true)									
+									elseif modelhash == -311022263 then --Seashark3
+										AttachEntityToEntity(clostestvehicle, oldtrailer, 20, 0.0, -1.1, 0.0, 0.0, 0.0, 0.0, false, false, false, false, 20, true)
+									else
+										AttachEntityToEntity(clostestvehicle, oldtrailer, 20, 0.0, -0.6, 0.3, 0.0, 0.0, 0.0, false, false, false, false, 20, true)
+									end
+									
+									CurrentlyTowedVehicle8 = clostestvehicle
+								else
+									AttachEntityToEntity(CurrentlyTowedVehicle8, oldtrailer, 20, 0.0, -7.0, 0.3, 0.0, 0.0, 0.0, false, false, false, false, 20, true)
+									DetachEntity(CurrentlyTowedVehicle8, true, true)
+									CurrentlyTowedVehicle8 = nil
+								end
+							end
+						end
+					end
+				end
+			end	
 		end
 		if IsControlJustPressed(1, Keys['B']) then
 			local playerVeh = GetVehiclePedIsIn(myPed, true)
