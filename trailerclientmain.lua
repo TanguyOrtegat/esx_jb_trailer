@@ -228,13 +228,13 @@ function OpenVehiculeMenu(oldtrailer, coords2)
 			if data.current.value == 'OuverturePlateau' then
 				porteCapotOuvert = true
 				SetVehicleDoorOpen(oldtrailer, 4, false, false)
-				OpenVehiculeMenu(oldtrailer)
+				OpenVehiculeMenu(oldtrailer, coords2)
 			end
 
 			if data.current.value == 'OuvertureRampe' then
 				porteCoffreOuvert = true
 				SetVehicleDoorOpen(oldtrailer, 5, false, false)
-				OpenVehiculeMenu(oldtrailer)
+				OpenVehiculeMenu(oldtrailer, coords2)
 			end
 
 --------------------- FERMER LES PORTES
@@ -242,13 +242,13 @@ function OpenVehiculeMenu(oldtrailer, coords2)
 			if data.current.value == 'FermeturePlateau' then
 				porteCapotOuvert = false
 				SetVehicleDoorShut(oldtrailer, 4, false, false)
-				OpenVehiculeMenu(oldtrailer)
+				OpenVehiculeMenu(oldtrailer, coords2)
 			end
 
 			if data.current.value == 'FermetureRampe' then
 				porteCoffreOuvert = false
 				SetVehicleDoorShut(oldtrailer, 5, false, false)
-				OpenVehiculeMenu(oldtrailer)
+				OpenVehiculeMenu(oldtrailer, coords2)
 			end
 --------------------- voitures en bas
 
