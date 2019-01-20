@@ -5,5 +5,6 @@ description 'trailer script by Jager Bom'
 version '1.0.0'
 
 client_scripts {
+  'config.lua',
   'trailerclientmain.lua'
 }

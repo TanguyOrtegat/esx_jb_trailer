@@ -90,8 +90,13 @@ Citizen.CreateThread(function()
 							DisplayHelpTextFromStringLabel(0, 0, 1, -1)
 							if IsControlJustPressed(1, Keys["E"]) then
 								local clostestvehicle = GetClosestVehicle(coords2.x, coords2.y, coords2.z, 2.0, 0, 127)
+								local modelhash = GetEntityModel(clostestvehicle)
 								if CurrentlyTowedVehicle7 == nil then
-									AttachEntityToEntity(clostestvehicle, oldtrailer, 20, 0.0, -1.1, 0.6, 0.0, 0.0, 0.0, false, false, false, false, 20, true)
+									if Config.Cartrailer[modelhash] ~= nil then
+										AttachEntityToEntity(clostestvehicle, oldtrailer, 20, 0.0, Config.Cartrailer[modelhash].ypos, Config.Cartrailer[modelhash].zpos, 0.0, 0.0, 0.0, false, false, false, false, 20, true)
+									else
+										AttachEntityToEntity(clostestvehicle, oldtrailer, 20, 0.0, -1.1, 0.6, 0.0, 0.0, 0.0, false, false, false, false, 20, true)
+									end
 									CurrentlyTowedVehicle7 = clostestvehicle
 								else
 									AttachEntityToEntity(CurrentlyTowedVehicle7, oldtrailer, 20, 0.0, -6.0, 0.3, 0.0, 0.0, 0.0, false, false, false, false, 20, true)
@@ -130,38 +135,8 @@ Citizen.CreateThread(function()
 									isboat = false
 								end
 								if CurrentlyTowedVehicle8 == nil and isboat then
-									if modelhash == -282946103 then--suntrap
-										AttachEntityToEntity(clostestvehicle, oldtrailer, 20, 0.0, -0.6, 0.3, 0.0, 0.0, 0.0, false, false, false, false, 20, true)
-									elseif modelhash == 290013743 then--tropic
-										AttachEntityToEntity(clostestvehicle, oldtrailer, 20, 0.0, -0.9, 0.7, 0.0, 0.0, 0.0, false, false, false, false, 20, true)									
-									elseif modelhash == 1448677353 then--tropic2
-										AttachEntityToEntity(clostestvehicle, oldtrailer, 20, 0.0, -0.9, 0.7, 0.0, 0.0, 0.0, false, false, false, false, 20, true)									
-									elseif modelhash == 1070967343 then --toro
-										AttachEntityToEntity(clostestvehicle, oldtrailer, 20, 0.0, -1.3, 0.7, 0.0, 0.0, 0.0, false, false, false, false, 20, true)									
-									elseif modelhash == 908897389 then --toro2
-										AttachEntityToEntity(clostestvehicle, oldtrailer, 20, 0.0, -1.3, 0.7, 0.0, 0.0, 0.0, false, false, false, false, 20, true)
-									elseif modelhash == 231083307 then --speeder
-										AttachEntityToEntity(clostestvehicle, oldtrailer, 20, 0.0, -2.1, 0.4, 0.0, 0.0, 0.0, false, false, false, false, 20, true)									
-									elseif modelhash == 437538602 then --speeder2
-										AttachEntityToEntity(clostestvehicle, oldtrailer, 20, 0.0, -2.1, 0.4, 0.0, 0.0, 0.0, false, false, false, false, 20, true)									
-									elseif modelhash == 400514754 then --squalo
-										AttachEntityToEntity(clostestvehicle, oldtrailer, 20, 0.0, -1.2, 0.8, 0.0, 0.0, 0.0, false, false, false, false, 20, true)									
-									elseif modelhash == 861409633 then --jetmax
-										AttachEntityToEntity(clostestvehicle, oldtrailer, 20, 0.0, -2.0, 0.6, 0.0, 0.0, 0.0, false, false, false, false, 20, true)									
-									elseif modelhash == 1033245328 then --Dinghy
-										AttachEntityToEntity(clostestvehicle, oldtrailer, 20, 0.0, -1.1, 0.3, 0.0, 0.0, 0.0, false, false, false, false, 20, true)									
-									elseif modelhash == 276773164 then --Dinghy2
-										AttachEntityToEntity(clostestvehicle, oldtrailer, 20, 0.0, -1.1, 0.3, 0.0, 0.0, 0.0, false, false, false, false, 20, true)									
-									elseif modelhash == 509498602 then --Dinghy3
-										AttachEntityToEntity(clostestvehicle, oldtrailer, 20, 0.0, -1.1, 0.3, 0.0, 0.0, 0.0, false, false, false, false, 20, true)									
-									elseif modelhash == 867467158 then --Dinghy4
-										AttachEntityToEntity(clostestvehicle, oldtrailer, 20, 0.0, -1.1, 0.3, 0.0, 0.0, 0.0, false, false, false, false, 20, true)									
-									elseif modelhash == -1030275036 then --Seashark
-										AttachEntityToEntity(clostestvehicle, oldtrailer, 20, 0.0, -1.1, 0.0, 0.0, 0.0, 0.0, false, false, false, false, 20, true)									
-									elseif modelhash == -616331036 then --Seashark2
-										AttachEntityToEntity(clostestvehicle, oldtrailer, 20, 0.0, -1.1, 0.0, 0.0, 0.0, 0.0, false, false, false, false, 20, true)									
-									elseif modelhash == -311022263 then --Seashark3
-										AttachEntityToEntity(clostestvehicle, oldtrailer, 20, 0.0, -1.1, 0.0, 0.0, 0.0, 0.0, false, false, false, false, 20, true)
+									if Config.Boattrailer[modelhash] ~= nil then
+										AttachEntityToEntity(clostestvehicle, oldtrailer, 20, 0.0, Config.Boattrailer[modelhash].ypos, Config.Boattrailer[modelhash].zpos, 0.0, 0.0, 0.0, false, false, false, false, 20, true)
 									else
 										AttachEntityToEntity(clostestvehicle, oldtrailer, 20, 0.0, -0.6, 0.3, 0.0, 0.0, 0.0, false, false, false, false, 20, true)
 									end
@@ -229,34 +204,33 @@ function OpenVehiculeMenu(oldtrailer, coords2)
 				porteCapotOuvert = true
 				SetVehicleDoorOpen(oldtrailer, 4, false, false)
 				OpenVehiculeMenu(oldtrailer, coords2)
-			end
-
-			if data.current.value == 'OuvertureRampe' then
+			elseif data.current.value == 'OuvertureRampe' then
 				porteCoffreOuvert = true
 				SetVehicleDoorOpen(oldtrailer, 5, false, false)
 				OpenVehiculeMenu(oldtrailer, coords2)
-			end
 
 --------------------- FERMER LES PORTES
 
-			if data.current.value == 'FermeturePlateau' then
+			elseif data.current.value == 'FermeturePlateau' then
 				porteCapotOuvert = false
 				SetVehicleDoorShut(oldtrailer, 4, false, false)
 				OpenVehiculeMenu(oldtrailer, coords2)
-			end
-
-			if data.current.value == 'FermetureRampe' then
+			elseif data.current.value == 'FermetureRampe' then
 				porteCoffreOuvert = false
 				SetVehicleDoorShut(oldtrailer, 5, false, false)
 				OpenVehiculeMenu(oldtrailer, coords2)
-			end
 --------------------- voitures en bas
 
-			if data.current.value == 'VoitureAvantBas' then
+			elseif data.current.value == 'VoitureAvantBas' then
 				----------- avant en bas
 				local clostestvehicle = GetClosestVehicle(coords2.x, coords2.y, coords2.z, 2.0, 0, 127)
+				local modelhash = GetEntityModel(clostestvehicle)
 				if CurrentlyTowedVehicle == nil then
-					AttachEntityToEntity(clostestvehicle, oldtrailer, 1, -0.6, 13.0, 1.5, 0.0, 0.0, 0.0, false, false, false, false, 20, true)
+					if Config.Trucktrailer.VoitureAvantBas[modelhash] ~= nil then
+						AttachEntityToEntity(clostestvehicle, oldtrailer, 1, Config.Trucktrailer.VoitureAvantBas[modelhash].xpos, Config.Trucktrailer.VoitureAvantBas[modelhash].ypos, Config.Trucktrailer.VoitureAvantBas[modelhash].zpos, 0.0, 0.0, 0.0, false, false, false, false, 20, true)
+					else
+						AttachEntityToEntity(clostestvehicle, oldtrailer, 1, -0.6, 13.0, 1.5, 0.0, 0.0, 0.0, false, false, false, false, 20, true)
+					end
 					CurrentlyTowedVehicle = clostestvehicle
 				else
 					AttachEntityToEntity(CurrentlyTowedVehicle, oldtrailer, 1, 0.0, -6.0, 0.3, 0.0, 0.0, 0.0, false, false, false, false, 20, true)
@@ -264,13 +238,16 @@ function OpenVehiculeMenu(oldtrailer, coords2)
 					CurrentlyTowedVehicle = nil
 				end
 				----------- avant en bas
-			end
-
-			if data.current.value == 'VoitureMilieuBas' then
+			elseif data.current.value == 'VoitureMilieuBas' then
 				----------- au milieu en bas
 				local clostestvehicle = GetClosestVehicle(coords2.x, coords2.y, coords2.z, 2.0, 0, 127)
+				local modelhash = GetEntityModel(clostestvehicle)
 				if CurrentlyTowedVehicle2 == nil then
-					AttachEntityToEntity(clostestvehicle, oldtrailer, 1, -0.6, 7.5, 1.5, 0.0, 0.0, 0.0, false, false, false, false, 20, true)
+					if Config.Trucktrailer.VoitureMilieuBas[modelhash] ~= nil then
+						AttachEntityToEntity(clostestvehicle, oldtrailer, 1, Config.Trucktrailer.VoitureMilieuBas[modelhash].xpos, Config.Trucktrailer.VoitureMilieuBas[modelhash].ypos, Config.Trucktrailer.VoitureMilieuBas[modelhash].zpos, 0.0, 0.0, 0.0, false, false, false, false, 20, true)
+					else
+						AttachEntityToEntity(clostestvehicle, oldtrailer, 1, -0.6, 7.5, 1.5, 0.0, 0.0, 0.0, false, false, false, false, 20, true)
+					end
 					CurrentlyTowedVehicle2 = clostestvehicle
 				else
 					AttachEntityToEntity(CurrentlyTowedVehicle2, oldtrailer, 1, 0.0, -6.0, 0.3, 0.0, 0.0, 0.0, false, false, false, false, 20, true)
@@ -278,13 +255,16 @@ function OpenVehiculeMenu(oldtrailer, coords2)
 					CurrentlyTowedVehicle2 = nil
 				end
 				----------- au milieu en bas
-			end			
-			
-			if data.current.value == 'VoitureArriereBas' then
+			elseif data.current.value == 'VoitureArriereBas' then
 				----------- arriere en bas
 				local clostestvehicle = GetClosestVehicle(coords2.x, coords2.y, coords2.z, 2.0, 0, 127)
+				local modelhash = GetEntityModel(clostestvehicle)
 				if CurrentlyTowedVehicle3 == nil then
-					AttachEntityToEntity(clostestvehicle, oldtrailer, 1, -0.6, 2.5, 1.5, 0.0, 0.0, 0.0, false, false, false, false, 20, true)
+					if Config.Trucktrailer.VoitureArriereBas[modelhash] ~= nil then
+						AttachEntityToEntity(clostestvehicle, oldtrailer, 1, Config.Trucktrailer.VoitureArriereBas[modelhash].xpos, Config.Trucktrailer.VoitureArriereBas[modelhash].ypos, Config.Trucktrailer.VoitureArriereBas[modelhash].zpos, 0.0, 0.0, 0.0, false, false, false, false, 20, true)
+					else
+						AttachEntityToEntity(clostestvehicle, oldtrailer, 1, -0.6, 2.5, 1.5, 0.0, 0.0, 0.0, false, false, false, false, 20, true)
+					end
 					CurrentlyTowedVehicle3 = clostestvehicle
 				else
 					AttachEntityToEntity(CurrentlyTowedVehicle2, oldtrailer, 1, 0.0, -6.0, 0.3, 0.0, 0.0, 0.0, false, false, false, false, 20, true)
@@ -292,15 +272,19 @@ function OpenVehiculeMenu(oldtrailer, coords2)
 					CurrentlyTowedVehicle3 = nil
 				end
 				----------- arriere en bas
-			end
 
 --------------------- voitures en haut
 
-			if data.current.value == 'VoitureAvantHaut' then
+			elseif data.current.value == 'VoitureAvantHaut' then
 				----------- avant en haut
 				local clostestvehicle = GetClosestVehicle(coords2.x, coords2.y, coords2.z, 2.0, 0, 127)
+				local modelhash = GetEntityModel(clostestvehicle)
 				if CurrentlyTowedVehicle4 == nil then
-					AttachEntityToEntity(clostestvehicle, oldtrailer, 1, -0.6, 13.0, 3.5, 0.0, 0.0, 0.0, false, false, false, false, 20, true)
+					if Config.Trucktrailer.VoitureAvantHaut[modelhash] ~= nil then
+						AttachEntityToEntity(clostestvehicle, oldtrailer, 1, Config.Trucktrailer.VoitureAvantHaut[modelhash].xpos, Config.Trucktrailer.VoitureAvantHaut[modelhash].ypos, Config.Trucktrailer.VoitureAvantHaut[modelhash].zpos, 0.0, 0.0, 0.0, false, false, false, false, 20, true)
+					else
+						AttachEntityToEntity(clostestvehicle, oldtrailer, 1, -0.6, 13.0, 3.5, 0.0, 0.0, 0.0, false, false, false, false, 20, true)
+					end
 					CurrentlyTowedVehicle4 = clostestvehicle
 				else
 					AttachEntityToEntity(CurrentlyTowedVehicle4, oldtrailer, 1, 0.0, -6.0, 0.3, 0.0, 0.0, 0.0, false, false, false, false, 20, true)
@@ -308,13 +292,16 @@ function OpenVehiculeMenu(oldtrailer, coords2)
 					CurrentlyTowedVehicle4 = nil
 				end
 				----------- avant en haut
-			end
-
-			if data.current.value == 'VoitureMilieuHaut' then
+			elseif data.current.value == 'VoitureMilieuHaut' then
 				----------- au milieu en haut
 				local clostestvehicle = GetClosestVehicle(coords2.x, coords2.y, coords2.z, 2.0, 0, 127)
+				local modelhash = GetEntityModel(clostestvehicle)
 				if CurrentlyTowedVehicle5 == nil then
-					AttachEntityToEntity(clostestvehicle, oldtrailer, 1, -0.6, 7.5, 3.5, 0.0, 0.0, 0.0, false, false, false, false, 20, true)
+					if Config.Trucktrailer.VoitureMilieuHaut[modelhash] ~= nil then
+						AttachEntityToEntity(clostestvehicle, oldtrailer, 1, Config.Trucktrailer.VoitureMilieuHaut[modelhash].xpos, Config.Trucktrailer.VoitureMilieuHaut[modelhash].ypos, Config.Trucktrailer.VoitureMilieuHaut[modelhash].zpos, 0.0, 0.0, 0.0, false, false, false, false, 20, true)
+					else
+						AttachEntityToEntity(clostestvehicle, oldtrailer, 1, -0.6, 7.5, 3.5, 0.0, 0.0, 0.0, false, false, false, false, 20, true)
+					end
 					CurrentlyTowedVehicle5 = clostestvehicle
 				else
 					AttachEntityToEntity(CurrentlyTowedVehicle5, oldtrailer, 1, 0.0, -6.0, 0.3, 0.0, 0.0, 0.0, false, false, false, false, 20, true)
@@ -322,13 +309,16 @@ function OpenVehiculeMenu(oldtrailer, coords2)
 					CurrentlyTowedVehicle5 = nil
 				end
 				----------- au milieu en haut
-			end			
-			
-			if data.current.value == 'VoitureArriereHaut' then
+			elseif data.current.value == 'VoitureArriereHaut' then
 				----------- arriere en haut
 				local clostestvehicle = GetClosestVehicle(coords2.x, coords2.y, coords2.z, 2.0, 0, 127)
+				local modelhash = GetEntityModel(clostestvehicle)
 				if CurrentlyTowedVehicle6 == nil then
-					AttachEntityToEntity(clostestvehicle, oldtrailer, 1, -0.6, 2.5, 3.5, 0.0, 0.0, 0.0, false, false, false, false, 20, true)
+					if Config.Trucktrailer.VoitureArriereHaut[modelhash] ~= nil then
+						AttachEntityToEntity(clostestvehicle, oldtrailer, 1, Config.Trucktrailer.VoitureArriereHaut[modelhash].xpos, Config.Trucktrailer.VoitureArriereHaut[modelhash].ypos, Config.Trucktrailer.VoitureArriereHaut[modelhash].zpos, 0.0, 0.0, 0.0, false, false, false, false, 20, true)
+					else
+						AttachEntityToEntity(clostestvehicle, oldtrailer, 1, -0.6, 2.5, 3.5, 0.0, 0.0, 0.0, false, false, false, false, 20, true)
+					end
 					CurrentlyTowedVehicle6 = clostestvehicle
 				else
 					AttachEntityToEntity(CurrentlyTowedVehicle6, oldtrailer, 1, 0.0, -6.0, 0.3, 0.0, 0.0, 0.0, false, false, false, false, 20, true)
