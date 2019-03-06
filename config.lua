@@ -26,7 +26,7 @@ Config.Boattrailer = {
 }
 
 Config.Cartrailer = {
-----------------
+	----------------
 	----COMPACTS----
 	----------------
 	[-344943009] =  {ypos = -0.95 , zpos = 0.5},--blista
