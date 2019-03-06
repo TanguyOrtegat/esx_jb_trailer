@@ -8,3 +8,4 @@ place trailersmall folder into your ressources and start both ressources.
 start trailersmall
 start esx_jb_trailer
 ```
+thanks to @XxFri3ndlyxX for updated config file
