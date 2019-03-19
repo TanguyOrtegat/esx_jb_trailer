@@ -19,6 +19,8 @@ Citizen.CreateThread(function()
 	end
 end)
 
+local lang = 'en' -- 'fr' (french) or 'en' (english)
+
 local CurrentlyTowedVehicle   = nil
 local CurrentlyTowedVehicle2   = nil
 local CurrentlyTowedVehicle3   = nil
@@ -60,7 +62,11 @@ Citizen.CreateThread(function()
 						-- FreezeEntityPosition
 						if dist < 1 then
 							SetTextComponentFormat("STRING")
-							AddTextComponentString("Appuyez ~INPUT_CONTEXT~ ouvrir menu de remorquage")
+							if lang == 'en' then
+								AddTextComponentString("Press ~INPUT_CONTEXT~ to open the towing menu")
+							elseif lang == 'fr' then
+								AddTextComponentString("Appuyez ~INPUT_CONTEXT~ ouvrir menu de remorquage")
+							end
 							DisplayHelpTextFromStringLabel(0, 0, 1, -1)
 							if IsControlJustPressed(1, Keys["E"]) then
 								OpenVehiculeMenu(oldtrailer, coords2)
@@ -83,9 +89,17 @@ Citizen.CreateThread(function()
 						if dist < 1 then
 							SetTextComponentFormat("STRING")
 							if CurrentlyTowedVehicle7 == nil then
-								AddTextComponentString("Appuyez ~INPUT_CONTEXT~ pour attacher véhicule")
+								if lang == 'en' then
+									AddTextComponentString("Press ~INPUT_CONTEXT~ to attach the vehicle")
+								elseif lang == 'fr' then
+									AddTextComponentString("Appuyez ~INPUT_CONTEXT~ pour attacher véhicule")
+								end
 							else
-								AddTextComponentString("Appuyez ~INPUT_CONTEXT~ pour détacher véhicule")
+								if lang == 'en' then
+									AddTextComponentString("Press ~INPUT_CONTEXT~ to detach the vehicle")
+								elseif lang == 'fr' then
+									AddTextComponentString("Appuyez ~INPUT_CONTEXT~ pour détacher véhicule")
+								end
 							end
 							DisplayHelpTextFromStringLabel(0, 0, 1, -1)
 							if IsControlJustPressed(1, Keys["E"]) then
@@ -120,9 +134,17 @@ Citizen.CreateThread(function()
 						if dist < 1 then
 							SetTextComponentFormat("STRING")
 							if CurrentlyTowedVehicle8 == nil then
-								AddTextComponentString("Appuyez ~INPUT_CONTEXT~ pour attacher véhicule")
+								if lang == 'en' then
+									AddTextComponentString("Press ~INPUT_CONTEXT~ to attach the vehicle")
+								elseif lang == 'fr' then
+									AddTextComponentString("Appuyez ~INPUT_CONTEXT~ pour attacher véhicule")
+								end
 							else
-								AddTextComponentString("Appuyez ~INPUT_CONTEXT~ pour détacher véhicule")
+								if lang == 'en' then
+									AddTextComponentString("Press ~INPUT_CONTEXT~ to detach the vehicle")
+								elseif lang == 'fr' then	
+									AddTextComponentString("Appuyez ~INPUT_CONTEXT~ pour détacher véhicule")
+								end
 							end
 							DisplayHelpTextFromStringLabel(0, 0, 1, -1)
 							if IsControlJustPressed(1, Keys["E"]) then
