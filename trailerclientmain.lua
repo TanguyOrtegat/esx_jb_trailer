@@ -89,7 +89,7 @@ Citizen.CreateThread(function()
 							end
 							DisplayHelpTextFromStringLabel(0, 0, 1, -1)
 							if IsControlJustPressed(1, Keys["E"]) then
-								local clostestvehicle = GetClosestVehicle(coords2.x, coords2.y, coords2.z, 2.0, 0, 127)
+								local clostestvehicle = getVehicleInDirection(coords, coords2)
 								local modelhash = GetEntityModel(clostestvehicle)
 								if CurrentlyTowedVehicle7 == nil then
 									if Config.Cartrailer[modelhash] ~= nil then
@@ -126,7 +126,7 @@ Citizen.CreateThread(function()
 							end
 							DisplayHelpTextFromStringLabel(0, 0, 1, -1)
 							if IsControlJustPressed(1, Keys["E"]) then
-								local clostestvehicle = GetClosestVehicle(coords2.x, coords2.y, coords2.z, 2.0, 0, 12294)
+								local clostestvehicle = getVehicleInDirection(coords, coords2)
 								local modelhash = GetEntityModel(clostestvehicle)
 								local isboat = false
 								if IsThisModelABoat(modelhash) then
@@ -160,6 +160,12 @@ Citizen.CreateThread(function()
 		end
 	end
 end)
+
+function getVehicleInDirection(coordFrom, coordTo)
+	local rayHandle = CastRayPointToPoint(coordFrom.x, coordFrom.y, coordFrom.z, coordTo.x, coordTo.y, coordTo.z, 10, GetPlayerPed(-1), 0)
+	local a, b, c, d, vehicle = GetRaycastResult(rayHandle)
+	return vehicle
+end
 
 function OpenVehiculeMenu(oldtrailer, coords2)
 
