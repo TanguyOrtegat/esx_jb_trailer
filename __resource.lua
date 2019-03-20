@@ -6,5 +6,7 @@ version '1.0.0'
 
 client_scripts {
   'config.lua',
-  'trailerclientmain.lua'
+  'trailerclientmain.lua',
+  'locales/en.lua',
+  'locales/fr.lua'
 }
