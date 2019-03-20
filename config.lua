@@ -4,7 +4,7 @@ Config = {}
 -- ypos is for moving vehicle on trailer back and forth
 -- zpos is for moving the vehicle up and down
 
-
+Config.Locale = 'en'
 
 Config.Boattrailer = {
     [-282946103] = {ypos = -0.6 , zpos = 0.3},--suntrap

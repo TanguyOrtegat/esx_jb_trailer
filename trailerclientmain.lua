@@ -60,7 +60,7 @@ Citizen.CreateThread(function()
 						-- FreezeEntityPosition
 						if dist < 1 then
 							SetTextComponentFormat("STRING")
-							AddTextComponentString("Appuyez ~INPUT_CONTEXT~ ouvrir menu de remorquage")
+							AddTextComponentString(_U("open_tow_menu"))
 							DisplayHelpTextFromStringLabel(0, 0, 1, -1)
 							if IsControlJustPressed(1, Keys["E"]) then
 								OpenVehiculeMenu(oldtrailer, coords2)
@@ -82,10 +82,10 @@ Citizen.CreateThread(function()
 						DrawMarker(1, coords2.x, coords2.y, coords2.z, 0, 0, 0, 0, 0, 0, 1.0, 1.0, 1.0, 255, 0, 0, 200, 0, 0, 0, 0)
 						if dist < 1 then
 							SetTextComponentFormat("STRING")
-							if CurrentlyTowedVehicle7 == nil then
-								AddTextComponentString("Appuyez ~INPUT_CONTEXT~ pour attacher véhicule")
+							if CurrentlyTowedVehicle7 == nil then								
+								AddTextComponentString(_U("attach_vehicle"))
 							else
-								AddTextComponentString("Appuyez ~INPUT_CONTEXT~ pour détacher véhicule")
+								AddTextComponentString(_U("detach_vehicle"))
 							end
 							DisplayHelpTextFromStringLabel(0, 0, 1, -1)
 							if IsControlJustPressed(1, Keys["E"]) then
@@ -120,9 +120,9 @@ Citizen.CreateThread(function()
 						if dist < 1 then
 							SetTextComponentFormat("STRING")
 							if CurrentlyTowedVehicle8 == nil then
-								AddTextComponentString("Appuyez ~INPUT_CONTEXT~ pour attacher véhicule")
+								AddTextComponentString(_U("attach_vehicle"))
 							else
-								AddTextComponentString("Appuyez ~INPUT_CONTEXT~ pour détacher véhicule")
+								AddTextComponentString(_U("detach_vehicle"))
 							end
 							DisplayHelpTextFromStringLabel(0, 0, 1, -1)
 							if IsControlJustPressed(1, Keys["E"]) then
