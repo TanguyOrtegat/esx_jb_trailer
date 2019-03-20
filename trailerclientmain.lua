@@ -19,8 +19,6 @@ Citizen.CreateThread(function()
 	end
 end)
 
-local lang = 'en' -- 'fr' (french) or 'en' (english)
-
 local CurrentlyTowedVehicle   = nil
 local CurrentlyTowedVehicle2   = nil
 local CurrentlyTowedVehicle3   = nil
