@@ -168,23 +168,23 @@ function OpenVehiculeMenu(oldtrailer, coords2)
 	
 	
 	if porteCapotOuvert then
-		table.insert(elements, {label = 'Fermer le plateau',	value = 'FermeturePlateau'})
+		table.insert(elements, {label = _U("close_plateau"),	value = 'FermeturePlateau'})
 	else
-		table.insert(elements, {label = 'Ouvrir le plateau',		value = 'OuverturePlateau'})
+		table.insert(elements, {label = _U("open_plateau"),		value = 'OuverturePlateau'})
 	end
 	
 	if porteCoffreOuvert then
-		table.insert(elements, {label = 'Fermer la rampe',	value = 'FermetureRampe'})
+		table.insert(elements, {label = _U("open_rampe"),	value = 'FermetureRampe'})
 	else
-		table.insert(elements, {label = 'Ouvrir la rampe',		value = 'OuvertureRampe'})
+		table.insert(elements, {label = _U("close_rampe"),		value = 'OuvertureRampe'})
 	end	
 	
-	table.insert(elements, {label = 'Mettre/enlever voiture avant bas',	value = 'VoitureAvantBas'})
-	table.insert(elements, {label = 'Mettre/enlever voiture mileu bas',	value = 'VoitureMilieuBas'})
-	table.insert(elements, {label = 'Mettre/enlever voiture arrière bas',	value = 'VoitureArriereBas'})
-	table.insert(elements, {label = 'Mettre/enlever voiture avant haut',	value = 'VoitureAvantHaut'})
-	table.insert(elements, {label = 'Mettre/enlever voiture mileu haut',	value = 'VoitureMilieuHaut'})
-	table.insert(elements, {label = 'Mettre/enlever voiture arrière haut',	value = 'VoitureArriereHaut'})
+	table.insert(elements, {label = _U("up_front_car"),	value = 'VoitureAvantBas'})
+	table.insert(elements, {label = _U("up_middle_car"),	value = 'VoitureMilieuBas'})
+	table.insert(elements, {label = _U("up_back_car"),	value = 'VoitureArriereBas'})
+	table.insert(elements, {label = _U("down_front_car"),	value = 'VoitureAvantHaut'})
+	table.insert(elements, {label = _U("down_middle_car"),	value = 'VoitureMilieuHaut'})
+	table.insert(elements, {label = _U("down_back_car"),	value = 'VoitureArriereHaut'})
 	
 
 	ESX.UI.Menu.Open(
