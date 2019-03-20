@@ -5,6 +5,7 @@ description 'trailer script by Jager Bom'
 version '1.0.0'
 
 client_scripts {
+  '@es_extended/locale.lua',
   'config.lua',
   'trailerclientmain.lua',
   'locales/en.lua',
