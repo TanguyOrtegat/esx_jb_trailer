@@ -12,4 +12,9 @@ Locales['fr'] = {
     ["down_front_car"] = 'Mettre/enlever voiture avant haut',
     ["down_middle_car"] = 'Mettre/enlever voiture mileu haut',
     ["down_back_car"] = 'Mettre/enlever voiture arrière haut',
+    ["front_car_pjtrailer"]       = "Mettre/enlever voiture avant",
+	["middle_car_pjtrailer"]      = "Mettre/enlever voiture mileu",
+	["back_car_pjtrailer"]        = "Mettre/enlever voiture arrière",
+	["open_rampe_pjtrailer"]      = "Ouvrir la rampe",
+	["close_rampe_pjtrailer"]     = "Fermer la rampe",
 }
