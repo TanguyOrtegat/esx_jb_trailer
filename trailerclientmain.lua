@@ -445,10 +445,10 @@ function OpenVehiculeMenu2(oldtrailer, coords2)
 	table.insert(elements, {label = _U("back_car_pjtrailer"),	value = 'VoitureArriere'})
 	
 	if porteCoffreOuvert then
-		table.insert(elements, {label = _U("open_rampe_pjtrailer"),	value = 'FermetureRampePjTrailer'})
+		table.insert(elements, {label = _U("close_rampe_pjtrailer"),	value = 'FermetureRampePjTrailer'})
 	else
-		table.insert(elements, {label = _U("close_rampe_pjtrailer"),		value = 'OuvertureRampePjTrailer'})
-	end	
+		table.insert(elements, {label = _U("open_rampe_pjtrailer"),		value = 'OuvertureRampePjTrailer'})
+	end
 	
 	
 	
