@@ -1,0 +1,15 @@
+Locales['fr'] = {
+    ["open_tow_menu"] = "Appuyez ~INPUT_CONTEXT~ ouvrir menu de remorquage",
+    ["attach_vehicle"] = "Appuyez ~INPUT_CONTEXT~ pour attacher véhicule",
+    ["detach_vehicle"] = "Appuyez ~INPUT_CONTEXT~ pour détacher véhicule",
+    ["close_plateau"] = 'Fermer le plateau',
+    ["open_plateau"] = 'Ouvrir le plateau',
+    ["open_rampe"] = 'Fermer la rampe',
+    ["close_rampe"] = 'Ouvrir la rampe',
+    ["up_front_car"] = 'Mettre/enlever voiture avant bas',
+    ["up_middle_car"] = 'Mettre/enlever voiture mileu bas',
+    ["up_back_car"] = 'Mettre/enlever voiture arrière bas',
+    ["down_front_car"] = 'Mettre/enlever voiture avant haut',
+    ["down_middle_car"] = 'Mettre/enlever voiture mileu haut',
+    ["down_back_car"] = 'Mettre/enlever voiture arrière haut',
+}
