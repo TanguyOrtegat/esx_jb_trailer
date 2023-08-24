@@ -1,11 +1,11 @@
 # esx_jb_trailer
 
-trailer script from Jager Bom
+Trailer script from Jager Bom
 
-place trailersmall folder into your ressources and start both ressources.
+Place trailersmall folder into your ressources and start both resources.
 
 ```
 start trailersmall
 start esx_jb_trailer
 ```
-thanks to @XxFri3ndlyxX for updated config file and @JHodgson1 for adding the locales !
+Thanks to @XxFri3ndlyxX for updated config file and @JHodgson1 for adding the locales !
