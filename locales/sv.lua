@@ -1,0 +1,20 @@
+Locales['sv'] = {
+    ["open_tow_menu"]             = "Tryck på ~INPUT_LOOK_BEHIND~ för att öppna släpmenyn",
+    ["attach_vehicle"]            = "Tryck på ~INPUT_LOOK_BEHIND~ för att lasta fordonet",
+    ["detach_vehicle"]            = "Tryck på ~INPUT_LOOK_BEHIND~ för att lasta av fordonet",
+	["front_car_pjtrailer"]       = "Bogsera/Släpp ner fordonet fram",
+	["middle_car_pjtrailer"]      = "Bogsera/Släpp ner fodonet i mitten",
+	["back_car_pjtrailer"]        = "Bogsera/Släpp ner fordonet bak",
+	["open_rampe_pjtrailer"]      = "Öppna ramp",
+	["close_rampe_pjtrailer"]     = "Stäng ramp",
+	["open_rampe"]                = "Öppna den nedre rampen",
+	["close_rampe"]               = "Stäng den nedre rampen",
+	["close_plateau"]             = 'Stäng den övre rampen',
+    ["open_plateau"]              = 'Öppna den övre rampen',
+    ["up_front_car"]              = 'Bogsera/Släpp fordonet undre, fram',
+    ["up_middle_car"]             = 'Bogsera/Släpp fordonet undre, mitten',
+    ["up_back_car"]               = 'Bogsera/Släpp fordonet undre, bak',
+    ["down_front_car"]            = 'Bogsera/Släpp fordonet övre, fram',
+    ["down_middle_car"]           = 'Bogsera/Släpp fordonet övre, mitten',
+    ["down_back_car"]             = 'Bogsera/Släpp fordonet övre, bak'
+}
