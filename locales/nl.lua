@@ -1,0 +1,20 @@
+Locales['nl'] = {
+    ["open_tow_menu"]             = "Druk ~INPUT_LOOK_BEHIND~ om het sleep menu te openen",
+    ["attach_vehicle"]            = "Druk ~INPUT_LOOK_BEHIND~ om het voertuig vast te zetten",
+    ["detach_vehicle"]            = "Druk ~INPUT_LOOK_BEHIND~ om het voertuig los te maken",
+	["front_car_pjtrailer"]       = "Slepen/Loslaten Voertuig Voor",
+	["middle_car_pjtrailer"]      = "Slepen/Loslaten Voertuig Midden",
+	["back_car_pjtrailer"]        = "Slepen/Loslaten Voertuig Achter",
+	["open_rampe_pjtrailer"]      = "Open De Trailerhelling",
+	["close_rampe_pjtrailer"]     = "Sluit De Trailerhelling",
+	["open_rampe"]                = "Open De Onderbrug",
+	["close_rampe"]               = "Sluit De Onderbrug",
+	["close_plateau"]             = 'Sluit De Bovenbrug',
+    ["open_plateau"]              = 'Open De Bovenbrug',
+    ["up_front_car"]              = 'Slepen/Loslaten Voertuig Onderkant Voor',
+    ["up_middle_car"]             = 'Slepen/Loslaten Voertuig Onderkant Midden',
+    ["up_back_car"]               = 'Slepen/Loslaten Voertuig Onderkant Achter',
+    ["down_front_car"]            = 'Slepen/Loslaten Voertuig Bovenkant Voor',
+    ["down_middle_car"]           = 'Slepen/Loslaten Voertuig Bovenkant Midden',
+    ["down_back_car"]             = 'Slepen/Loslaten Voertuig Bovenkant Achter'
+}
